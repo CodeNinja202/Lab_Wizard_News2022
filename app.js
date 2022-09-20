@@ -11,6 +11,8 @@ app.use(express.json());
 app.get("/", (req, res) => {
   // FIRST GET THE LIST OF POSTS
   const posts = postBank.list();
+ 
+ 
 
   //THEN PREPARE SOME HTML TO SENT AS OUTPUT
 
@@ -84,7 +86,7 @@ app.get("/posts/:id", (req, res) => {
 });
 
 
-// // ERROR HANDLER OPTION 1
+// ERROR HANDLER OPTION 1
 // function errorHandler(err, req, res, next) {
 //   if (err) {
 //     console.log("Server ERROR")
@@ -113,14 +115,17 @@ app.get("/posts/:id", (req, res) => {
 app.use((err, req, res, next) => {
   if (err) {
     
-    return res.send(`
+   res.send(`
     <html>
     <body>
-    <h1>404 ERROR</h1>
-    <h3>PAGE NOT FOUND</h3>
+   
+   
+   
     <p>
     
     <span><a href='/'>Click to go home</a></span>
+    <img src="/IMG_0982.jpeg"/>
+   
     </p>
     </body>
     </html>
